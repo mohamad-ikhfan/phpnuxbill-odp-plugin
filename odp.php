@@ -195,32 +195,32 @@ function odp()
             r2(getUrl('plugin/odp/view/' . $odp_id), 's', Lang::T('registered ODP Successfully'));
             break;
         default:
-            // ORM::raw_execute("
-            //     CREATE TABLE IF NOT EXISTS tbl_odp (
-            //         id INT AUTO_INCREMENT PRIMARY KEY,
-            //         odp_code VARCHAR(50) NOT NULL,
-            //         capacity INT(11) NOT NULL,
-            //         pole ENUM('standalone','shared') DEFAULT 'standalone',
-            //         ratio VARCHAR(5) NULL,
-            //         coordinates VARCHAR(50) NULL,
-            //         descriptions VARCHAR(255) NULL,
-            //         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            //     )
-            // ");
+            ORM::raw_execute("
+                CREATE TABLE IF NOT EXISTS tbl_odp (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    odp_code VARCHAR(50) NOT NULL,
+                    capacity INT(11) NOT NULL,
+                    pole ENUM('standalone','shared') DEFAULT 'standalone',
+                    ratio VARCHAR(5) NULL,
+                    coordinates VARCHAR(50) NULL,
+                    descriptions VARCHAR(255) NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ");
 
-            // ORM::raw_execute("
-            //     CREATE TABLE IF NOT EXISTS tbl_register_odp_for_customer (
-            //         id INT AUTO_INCREMENT PRIMARY KEY,
-            //         odp_id INT(11) NOT NULL,
-            //         customer_id INT(11) NOT NULL,
-            //         cable_code VARCHAR(50) NULL,
-            //         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            //         CONSTRAINT fk_odp FOREIGN KEY (odp_id) 
-            //             REFERENCES tbl_odp(id),
-            //         CONSTRAINT fk_customer FOREIGN KEY (customer_id) 
-            //             REFERENCES tbl_customers(id)
-            //     ) ENGINE=InnoDB;
-            // ");
+            ORM::raw_execute("
+                CREATE TABLE IF NOT EXISTS tbl_register_odp_for_customer (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    odp_id INT(11) NOT NULL,
+                    customer_id INT(11) NOT NULL,
+                    cable_code VARCHAR(50) NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    CONSTRAINT fk_odp FOREIGN KEY (odp_id) 
+                        REFERENCES tbl_odp(id),
+                    CONSTRAINT fk_customer FOREIGN KEY (customer_id) 
+                        REFERENCES tbl_customers(id)
+                ) ENGINE=InnoDB;
+            ");
 
             $ui->assign('_title', "ODP");
 
