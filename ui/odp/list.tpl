@@ -36,9 +36,14 @@
                         <thead>
                             <tr>
                                 <th>{Lang::T('ODP Code')}</th>
+                                <th>{Lang::T('Core Used')}</th>
                                 <th>{Lang::T('Capacity')}</th>
                                 <th>{Lang::T('Pole')}</th>
                                 <th>{Lang::T('Ratio')}</th>
+                                <th>{Lang::T('Passive')}</th>
+                                <th>{Lang::T('Input Attenuation')}</th>
+                                <th>{Lang::T('Output Attenuation')}</th>
+                                <th>{Lang::T('ODP Attenuation')}</th>
                                 <th>{Lang::T('Coordinates')}</th>
                                 <th>{Lang::T('Descriptions')}</th>
                                 <th class="text-center">{Lang::T('Manage')}</th>
@@ -48,9 +53,14 @@
                             {foreach $d as $ds}
                                 <tr>
                                     <td>{$ds['odp_code']}</td>
+                                    <td>{$ds['core_used']}</td>
                                     <td>{$ds['capacity']}</td>
                                     <td>{$ds['pole']}</td>
                                     <td>{$ds['ratio']}</td>
+                                    <td>{$ds['passive']}</td>
+                                    <td>{$ds['input_attenuation']}</td>
+                                    <td>{$ds['output_attenuation']}</td>
+                                    <td>{$ds['odp_attenuation']}</td>
                                     <td>
                                     {if $ds['coordinates']}
                                     <a href="https://www.google.com/maps/dir//{$ds['coordinates']}/" target="_blank"

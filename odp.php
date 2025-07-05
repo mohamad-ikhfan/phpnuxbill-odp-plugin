@@ -31,9 +31,14 @@ function odp()
             }
 
             $odp_code = _post('odp_code');
+            $core_used = _post('core_used');
             $capacity = _post('capacity');
             $pole = _post('pole');
+            $passive = _post('passive');
             $ratio = _post('ratio');
+            $input_attenuation = _post('input_attenuation');
+            $output_attenuation = _post('output_attenuation');
+            $odp_attenuation = _post('odp_attenuation');
             $coordinates = _post('coordinates');
             $descriptions = _post('descriptions');
 
@@ -54,9 +59,14 @@ function odp()
             if ($msg == '') {
                 $d = ORM::for_table('tbl_odp')->create();
                 $d->odp_code = $odp_code;
+                $d->core_used = $core_used;
                 $d->capacity = $capacity;
                 $d->pole = $pole;
+                $d->passive = $passive;
                 $d->ratio = $ratio;
+                $d->input_attenuation = $input_attenuation;
+                $d->output_attenuation = $output_attenuation;
+                $d->odp_attenuation = $odp_attenuation;
                 $d->coordinates = $coordinates;
                 $d->descriptions = $descriptions;
                 $d->save();
@@ -92,9 +102,14 @@ function odp()
 
             $id = _post('id');
             $odp_code = _post('odp_code');
+            $core_used = _post('core_used');
             $capacity = _post('capacity');
             $pole = _post('pole');
+            $passive = _post('passive');
             $ratio = _post('ratio');
+            $input_attenuation = _post('input_attenuation');
+            $output_attenuation = _post('output_attenuation');
+            $odp_attenuation = _post('odp_attenuation');
             $coordinates = _post('coordinates');
             $descriptions = _post('descriptions');
 
@@ -111,9 +126,14 @@ function odp()
 
             if ($msg == '') {
                 $d->odp_code = $odp_code;
+                $d->core_used = $core_used;
                 $d->capacity = $capacity;
                 $d->pole = $pole;
+                $d->passive = $passive;
                 $d->ratio = $ratio;
+                $d->input_attenuation = $input_attenuation;
+                $d->output_attenuation = $output_attenuation;
+                $d->odp_attenuation = $odp_attenuation;
                 $d->coordinates = $coordinates;
                 $d->descriptions = $descriptions;
                 $d->save();
@@ -199,9 +219,14 @@ function odp()
                 CREATE TABLE IF NOT EXISTS tbl_odp (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     odp_code VARCHAR(50) NOT NULL,
-                    capacity INT(11) NOT NULL,
-                    pole ENUM('standalone','shared') DEFAULT 'standalone',
+                    core_used VARCHAR(50) NULL,
+                    capacity INT(11) NULL,
+                    pole ENUM('jtn','shared') DEFAULT 'jtn',
                     ratio VARCHAR(5) NULL,
+                    passive INT(11) NULL,
+                    input_attenuation VARCHAR(50) NULL,
+                    output_attenuation VARCHAR(50) NULL,
+                    odp_attenuation VARCHAR(50) NULL,
                     coordinates VARCHAR(50) NULL,
                     descriptions VARCHAR(255) NULL,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

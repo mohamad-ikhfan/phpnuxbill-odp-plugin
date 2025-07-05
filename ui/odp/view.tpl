@@ -11,14 +11,20 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">{Lang::T('Pole')}</label>
                         <div class="col-md-6">
-                            <label style="margin-right:8px"><input type="radio" disabled {if $d['pole'] == 'standalone'}checked{/if} id="pole" name="pole" value="standalone" style="margin-right:4px">{Lang::T('Standalone')}</label>
-                            <label><input type="radio" disabled {if $d['pole'] == 'shared'}checked{/if} id="pole" name="pole" value="shared" style="margin-right:4px">{Lang::T('Shared')}</label>
+                            <label style="margin-right:8px"><input type="radio" disabled {if $d['pole'] == 'jtn'}checked{/if} id="pole" name="pole" value="jtn" style="margin-right:4px">{Lang::T('JTN')}</label>
+                            <label><input type="radio" disabled id="pole" name="pole" value="shared" style="margin-right:4px">{Lang::T('Shared')}</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">{Lang::T('ODP Code')}</label>
                         <div class="col-md-6">
                             <input type="text" readonly class="form-control" id="odp_code" name="odp_code" value="{$d['odp_code']}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">{Lang::T('Core Used')}</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly class="form-control" id="core_used" name="core_used" value="{$d['core_used']}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -31,6 +37,30 @@
                         <label class="col-md-2 control-label">{Lang::T('Ratio')}</label>
                         <div class="col-md-6">
                             <input type="text" readonly class="form-control" id="ratio" name="ratio" value="{$d['ratio']}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">{Lang::T('Passive')}</label>
+                        <div class="col-md-6">
+                            <input type="number" readonly class="form-control" id="passive" name="passive" value="{$d['passive']}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">{Lang::T('Input Attenuation')}</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly class="form-control" id="input_attenuation" name="input_attenuation" value="{$d['input_attenuation']}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">{Lang::T('Output Attenuation')}</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly class="form-control" id="output_attenuation" name="output_attenuation" value="{$d['output_attenuation']}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">{Lang::T('ODP Attenuation')}</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly class="form-control" id="odp_attenuation" name="odp_attenuation" value="{$d['odp_attenuation']}">
                         </div>
                     </div>
                     <div class="form-group">
